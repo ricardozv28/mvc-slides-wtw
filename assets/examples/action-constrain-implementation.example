@@ -1,0 +1,14 @@
+public class HomeController : Controller
+{
+  public IActionResult Index()
+  {
+      return View();
+  }
+
+  [IsMobile]
+  [ActionName("Index")]
+  public IActionResult MobileIndex()
+  {
+      return Content("Mobile View");
+  }
+}

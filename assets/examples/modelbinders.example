@@ -1,0 +1,9 @@
+public IActionResult Edit([FromBody] string name)
+{
+  return Content("Edit Action Method with parameters");
+}
+
+public IActionResult Edit([FromQuery] string name)
+{
+  return Content("Edit Action Method with parameters");
+}

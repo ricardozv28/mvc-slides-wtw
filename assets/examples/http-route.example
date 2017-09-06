@@ -1,0 +1,13 @@
+public class TaskController : Controller
+{
+  [HttpGet("/tasks")]
+  public IActionResult ListTasks()
+  {
+    return Ok();
+  }
+  [HttpPost("/tasks")]
+  public IActionResult CreateTask()
+  {
+    return Ok();
+  }
+}

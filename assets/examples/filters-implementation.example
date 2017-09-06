@@ -1,0 +1,9 @@
+[LocalOnly]
+public class HomeController : Controller
+{
+  [LogFilter]
+  public IActionResult Index()
+  {
+    return View();
+  }
+}

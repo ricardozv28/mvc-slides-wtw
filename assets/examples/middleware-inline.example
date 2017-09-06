@@ -1,0 +1,23 @@
+// Startup.cs
+
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Hello World");
+});
+
+app.Use(async (context, next) =>
+{
+    //Before logic here
+    await next.Invoke();
+    //After logic
+});
+
+app.Map("/hello", SayHello);
+
+private static void SayHello(IApplicationBuilder app)
+{
+   app.Run(async context =>
+   {
+       await context.Response.WriteAsync("Hi, the request was mapped here.");
+   });
+}

@@ -1,0 +1,10 @@
+@{
+  ViewData["Title"] = "Page Title";
+}
+
+<div>
+  <h2>Razor Views</h2>
+  <ul>
+    <li>@Html.Action ("Home")</li>
+  </ul>
+</div>

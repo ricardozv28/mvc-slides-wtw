@@ -1,0 +1,9 @@
+[Route ("task")]
+public class HomeController : Controller
+{
+  [Route ("edit")]
+  public IActionResult Index()
+  {
+    return Content("Hello World");
+  }
+}

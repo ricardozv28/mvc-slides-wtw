@@ -1,0 +1,11 @@
+public class HomeController : Controller
+{
+  public IActionResult Edit()
+  {
+    return Content("Edit Action Method");
+  }
+  public IActionResult Edit(int id, string name)
+  {
+    return Content("Edit Action Method with parameters");
+  }
+}

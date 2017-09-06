@@ -1,0 +1,29 @@
+public class BasicMiddleware
+{
+  private readonly RequestDelegate _next;
+  public BasicMiddleware(RequestDelegate next)
+  {
+    _next = next;
+  }
+
+  public async Task Invoke(HttpContext context)
+  {
+    Debug.WriteLine("=== Before ====");
+    await _next.Invoke(context);
+    Debug.WriteLine("=== After ===");
+  }
+}
+
+
+// Startup.CS
+
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+{
+  app.UseMiddleware<LoggingMiddleware>();
+
+  app.Run(async context =>
+  {
+    Debug.WriteLine("=== During Run ===");
+    await context.Response.WriteAsync("Response from Run.");
+  });
+}
